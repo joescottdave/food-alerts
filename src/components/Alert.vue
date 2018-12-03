@@ -19,6 +19,6 @@
       box-shadow: 2px 1px 5px 1px #f4f4f4;
       padding: 10px;
       margin: 1em 0;
-      text-align: left;
+      max-width: 500px;
   }
 </style>
