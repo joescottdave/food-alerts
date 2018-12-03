@@ -42,7 +42,6 @@ export default {
   methods: {
     submitThis(e) {
       e.preventDefault()
-      console.log(this.input)
       fetch('https://data.food.gov.uk/food-alerts/id?search=' + this.input)
         .then(response => response.json())
         .then(data => this.searchResults = data.items)
@@ -59,10 +58,15 @@ export default {
   text-align: center;
   color: #252525;
   margin-top: 60px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
 }
 
 section {
   border-bottom: 2px grey solid;
   padding: 1em;
+  grid-column: auto;
 }
 </style>
