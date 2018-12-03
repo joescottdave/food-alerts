@@ -1,6 +1,7 @@
 <template>
   <div>
-      <!-- Search Functionality -->
+
+    <!-- Search Functionality -->
     <section>
       <form v-on:submit="submitThis">
         <input v-model="input"/>
@@ -19,7 +20,9 @@
 
     <!-- Alerts Display -->
     <section>
-      <Alert v-for="alert in alerts" :desc="alert.title" :date="alert.created" />
+      <router-link v-for="alert in alerts" :to="'/alert/' + alert.notation">
+        <Alert :desc="alert.title" :date="alert.created" />
+      </router-link>
     </section>
     
     <a v-if="alerts.length > 1 || searchTerm" @click="getAlerts(1)" href="#">Reset</a>
@@ -32,34 +35,33 @@
   import Alert from './Alert.vue'
 
   export default {
-      name: 'Home',
-      components: {Alert},
-      data: function() {
-    return {
-      alerts: null,
-      input: null,
-      searchTerm: null,
-      // searchResults: null,
-    }
-  },
-  mounted: function() {
-    this.getAlerts(1)
-  },
-  methods: {
-    getAlerts(number) {
-      fetch('http://data.food.gov.uk/food-alerts/id?_limit='+number+'&_sort=-created')
-      .then(response => response.json())
-      .then(data => this.alerts = data.items)
-      this.input = null
-      this.searchTerm = null
+    name: 'Home',
+    components: {Alert},
+    data: function() {
+      return {
+        alerts: null,
+        input: null,
+        searchTerm: null
+      }
     },
-    submitThis(e) {
-      e.preventDefault()
-      this.searchTerm = this.input
-      fetch('https://data.food.gov.uk/food-alerts/id?search=' + this.input)
-        .then(response => response.json())
-        .then(data => this.alerts = data.items)
+    mounted: function() {
+      this.getAlerts(1)
+    },
+    methods: {
+      getAlerts(number) {
+        fetch('http://data.food.gov.uk/food-alerts/id?_limit='+number+'&_sort=-created')
+          .then(response => response.json())
+          .then(data => this.alerts = data.items)
+        this.input = null
+        this.searchTerm = null
+      },
+      submitThis(e) {
+        e.preventDefault()
+        this.searchTerm = this.input
+        fetch('https://data.food.gov.uk/food-alerts/id?search=' + this.input)
+          .then(response => response.json())
+          .then(data => this.alerts = data.items)
+      }
     }
-  }
   }
 </script>
