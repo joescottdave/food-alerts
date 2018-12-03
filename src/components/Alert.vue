@@ -1,6 +1,6 @@
 <template>
   <div class="alert">
-      <h4>{{ date }}</h4>
+      <h4>{{ date.split('-').reverse().join('/') }}</h4>
       <p>{{ desc }}</p>
   </div>
 </template>
@@ -14,12 +14,11 @@
 
 <style scoped>
   .alert {
-      background: #f4f4f4;
+      background: #fffbfb;
       border-top: 2px red solid;
-      padding: 4px;
+      box-shadow: 2px 1px 5px 1px #f4f4f4;
+      padding: 10px;
       margin: 1em 0;
-  }
-  h3 {
-      color: red;
+      text-align: left;
   }
 </style>
