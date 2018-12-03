@@ -76,6 +76,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #252525;
   margin-top: 60px;
+  margin-bottom: 40px;
 
   display: flex;
   flex-direction: column;
