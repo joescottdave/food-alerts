@@ -1,5 +1,8 @@
 # food-alerts
-Project built with Vue CLI
+
+## To Do
+1. Dress up Alert component, decide on most pertinent information for a snapshot
+2. Break up functionality, display one view at a time.
 
 ## Project setup
 ```
