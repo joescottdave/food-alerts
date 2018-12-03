@@ -1,9 +1,8 @@
 # food-alerts
 
 ## To Do
-1. Dress up Alert component, decide on most pertinent information for a snapshot
-2. Break up functionality, display one view at a time.
-3. Create click-through behaviour
+1. Presentational work to be done on Alert component and Full Alert view
+2. Router Link behaviour should be added to the Alert Component and not written into the Home view logic
 
 ## Project setup
 ```
