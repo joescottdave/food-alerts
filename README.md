@@ -3,6 +3,7 @@
 ## To Do
 1. Presentational work to be done on Alert component and Full Alert view
 2. Router Link behaviour should be added to the Alert Component and not written into the Home view logic
+3. Search results and ten latest results should be their own router-views to prevent broken behaviour on pressing back.
 
 ## Project setup
 ```
