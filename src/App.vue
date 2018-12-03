@@ -14,6 +14,9 @@
       <input v-model="input"/>
       <button type="submit">Search</button>
       </form>
+      <p v-if="searchTerm && searchResults.length > 1">Your search for "{{searchTerm}}" returned {{searchResults.length}} results</p>
+      <p v-else-if="searchTerm && searchResults.length == 1">Your search for {{searchTerm}} returned 1 result.</p>
+      <p v-else-if="searchTerm && searchResults.length == 0">Your search for {{searchTerm}} returned no results.</p>
       <Alert v-if="searchResults" v-for="alert in searchResults" :desc="alert.title" :date="alert.created" />
     </section>
   </div>
@@ -31,7 +34,8 @@ export default {
     return {
       alerts: null,
       input: null,
-      searchResults: null
+      searchTerm: null,
+      searchResults: null,
     }
   },
   mounted: function() {
@@ -42,6 +46,7 @@ export default {
   methods: {
     submitThis(e) {
       e.preventDefault()
+      this.searchTerm = this.input
       fetch('https://data.food.gov.uk/food-alerts/id?search=' + this.input)
         .then(response => response.json())
         .then(data => this.searchResults = data.items)
