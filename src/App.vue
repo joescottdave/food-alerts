@@ -9,15 +9,15 @@
         <input v-model="input"/>
         <button type="submit">Search</button>
       </form>
-      <p v-if="searchTerm && alerts.length > 1">Your search for "{{searchTerm}}" returned {{alerts.length}} results</p>
-      <p v-else-if="searchTerm && alerts.length == 1">Your search for "{{searchTerm}}" returned 1 result.</p>
-      <p v-else-if="searchTerm && alerts.length == 0">Your search for "{{searchTerm}}" returned no results.</p>
     </section>
 
     <section>
       <h2 v-if="searchTerm">Search Results</h2>
       <h2 v-else-if="alerts.length > 1">Latest Alerts</h2>
       <h2 v-else>Latest Alert</h2>
+      <p v-if="searchTerm && alerts.length > 1">Your search for "{{searchTerm}}" returned {{alerts.length}} results</p>
+      <p v-else-if="searchTerm && alerts.length == 1">Your search for "{{searchTerm}}" returned 1 result.</p>
+      <p v-else-if="searchTerm && alerts.length == 0">Your search for "{{searchTerm}}" returned no results.</p>
     </section>
 
     <!-- Alerts Display -->
