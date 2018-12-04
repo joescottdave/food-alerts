@@ -39,4 +39,13 @@ input, button {
 form {
   display:inline;
 }
+
+a, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 </style>

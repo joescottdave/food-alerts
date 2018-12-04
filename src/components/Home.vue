@@ -25,8 +25,10 @@
       </router-link>
     </section>
     
-    <a v-if="alerts.length > 1 || searchTerm" @click="getAlerts(1)" href="#">Reset</a>
-    <a v-else @click="getAlerts(10)" href="#">Show ten latest alerts...</a>
+    <nav>
+      <a v-if="alerts.length > 1 || searchTerm" @click="getAlerts(1)" href="#">Reset</a>
+      <a v-else @click="getAlerts(10)" href="#">Show ten latest alerts...</a>
+    </nav>
 
   </div>
 </template>
@@ -65,3 +67,18 @@
     }
   }
 </script>
+
+<style scoped>
+  h2 {
+    text-align: center;
+  }
+
+  form, nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav a {
+    text-decoration: underline;
+  }
+</style>

@@ -26,7 +26,9 @@
         </li>
       </ul>
     </div>
-    <router-link to="/">Go Back</router-link>
+    <nav>
+      <router-link to="/">Go Back</router-link>
+    </nav>
   </div>
 </template>
 
@@ -73,4 +75,14 @@
     background: #fff0f0;
     color: #ff0000;
   }
+
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav a {
+    text-decoration: underline;
+  }
+  
 </style>
