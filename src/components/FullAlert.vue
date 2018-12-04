@@ -65,13 +65,19 @@
   }
 
   li {
-    margin: 0.5em 0;
+    margin: 0.6em 0;
+  }
+
+  li p {
+    margin-top: 0;
   }
 
   li.allergens-item {
     display: inline;
     margin-right: 0.4em;
-    padding: 0.4em;
+    padding: 0.1em 0.4em;
+    border: 1px solid #ff2424;
+    border-radius: 4px;
     background: #fff0f0;
     color: #ff0000;
   }
@@ -84,5 +90,5 @@
   nav a {
     text-decoration: underline;
   }
-  
+
 </style>
