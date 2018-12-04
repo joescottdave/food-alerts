@@ -20,7 +20,7 @@
 
     <!-- Alerts Display -->
     <section v-if="alerts">
-      <router-link v-for="alert in alerts" :to="'/alert/' + alert.notation">
+      <router-link v-for="(alert, index) in alerts" :key="index" :to="'/alert/' + alert.notation">
         <Alert :desc="alert.title" :date="alert.created" />
       </router-link>
     </section>

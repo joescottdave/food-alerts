@@ -2,18 +2,18 @@
   <div>
     <div class="fullAlert">
       <ul v-if="alert">
-        <li><h4>{{alert.created}}</h4></li>
+        <li><h4>{{alert.created.split('-').reverse().join('/')}}</h4></li>
         <li><h3>{{alert.reportingBusiness.commonName}}</h3></li>
         <li>
           <strong>Products:</strong>
           <ul>
-            <li v-for="product in alert.productDetails">{{product.productName}}</li>
+            <li v-for="(product, index) in alert.productDetails" :key="index">{{product.productName}}</li>
           </ul>
         </li>
         <li v-if="alert.problem[0].allergen">
           <strong>Allergens:</strong>
           <ul>
-            <li class="allergens-item" v-for="allergen in alert.problem[0].allergen">{{allergen.label}}</li>
+            <li class="allergens-item" v-for="(allergen, index) in alert.problem[0].allergen" :key="index">{{allergen.label}}</li>
           </ul>
         </li>
         <li>
