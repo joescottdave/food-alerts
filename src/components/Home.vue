@@ -9,7 +9,7 @@
       </form>
     </section>
 
-    <section>
+    <section v-if="alerts">
       <h2 v-if="searchTerm">Search Results</h2>
       <h2 v-else-if="alerts.length > 1">Latest Alerts</h2>
       <h2 v-else>Latest Alert</h2>
@@ -25,7 +25,7 @@
       </router-link>
     </section>
     
-    <nav>
+    <nav v-if="alerts">
       <a v-if="alerts.length > 1 || searchTerm" @click="getAlerts(1)" href="#">Reset</a>
       <a v-else @click="getAlerts(10)" href="#">Show ten latest alerts...</a>
     </nav>
