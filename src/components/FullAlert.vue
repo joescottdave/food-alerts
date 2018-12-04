@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul>
+    <ul v-if="alert">
       <li>{{alert.created}}</li>
       <li>{{alert.reportingBusiness.commonName}}</li>
       <li v-for="product in alert.productDetails">{{product.productName}}</li>
@@ -28,3 +28,10 @@
       }
   }
 </script>
+
+<style scoped>
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+</style>
