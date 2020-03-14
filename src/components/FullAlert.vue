@@ -56,9 +56,12 @@ import AlertService from "@/services/AlertService.js";
 
 export default {
   name: "FullAlert",
+  props: {
+    id: String
+  },
+
   data: function() {
     return {
-      id: this.$route.params.id,
       alert: null
     };
   },

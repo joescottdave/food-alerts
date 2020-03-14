@@ -16,7 +16,8 @@ export default new Router({
         {
             path:'/alert/:id',
             name: 'full-alert',
-            component: FullAlert
+            component: FullAlert,
+            props: true
         }
     ]
 })
