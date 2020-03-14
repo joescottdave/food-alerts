@@ -62,7 +62,7 @@ export default {
       alert: null
     };
   },
-  mounted: function() {
+  created: function() {
     AlertService.getAlert(this.id)
       .then(response => (this.alert = response.data.items[0]))
       .catch(error => console.log("There was an error: " + error));

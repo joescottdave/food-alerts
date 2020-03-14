@@ -62,7 +62,7 @@ export default {
       searchTerm: null
     };
   },
-  mounted: function() {
+  created: function() {
     this.getAlertsList(1);
   },
   methods: {
